@@ -214,7 +214,6 @@ $slider_img_files = scanDir::scan($slider_img_dirs, $img_file_ext);
 <div class="footer">
     <br>
     <p>Copyright &copy 2020-<script>document.write(new Date().getFullYear())</script> <a href="https://clanwaf.de">ClanWAF.de</a> All Rights Reserved.</p>
-    <div class="made">Made By <a href="https://NoSync.xyz">NoSync.xyz</a> <red><i class="fas fa-heart"></i></red></div>
 </div>
 <!-- Footer -->
 
