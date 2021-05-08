@@ -1,0 +1,146 @@
+body, html {
+    scroll-behavior: smooth;
+    background: #2C2F33 !important;
+    color: #fff !important;
+    font-family: "Arial", sans-serif;
+}
+
+::selection {
+    color: #fff;
+    background-color: #AC0011;
+}
+
+/* Scrollbar Start */
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #808080;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(172, 0, 17);
+    border-radius: 10px;
+}
+
+/* Scrollbar Ende */
+
+a{
+    background: #2C2F33 !important;
+}
+
+a:hover {
+    color: #AC0011 !important;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.made{
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.bg{
+    width: 100%;
+    height: 800px;
+}
+
+.logotext{
+    font-weight: bold;
+    font-size: 60px;
+    position: absolute;
+    top: 30%;
+    left: 42%;
+}
+
+.wave{
+    position: absolute;
+    left: 0;
+    top: 550px
+}
+
+.about-header{
+    color: #AC0011;
+    font-weight: bold;
+    font-size: 60px;
+    position: absolute;
+    top: 85%;
+    margin-left: 43.5%;
+}
+
+.about-text{
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: 96%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.card-body{
+    background-color: #0E1012 !important;
+    padding-bottom:5px !important;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #AC0011 !important;
+    color: #0e1012 !important;
+}
+
+.card{
+    border:0px !important;
+}
+
+.card-link{
+    font-size:24px;
+}
+
+.team-color .bg-darker{
+    background-color: #0E1012 !important;
+}
+
+.card-pic img{
+    border: 3px solid #AC0011;
+    background-color: #0e1012;
+}
+
+.footer{
+    border-top: 6px solid #AC0011;
+    text-align: center;
+    padding:10px;
+}
+
+red{
+    color:red;
+}
+
+.ca-header{
+    color: #AC0011;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+}
+
+.calender{
+    margin-left: 19%;
+    border-radius: 5px;
+}
+
+.ga-header{
+    color: #AC0011;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+}
