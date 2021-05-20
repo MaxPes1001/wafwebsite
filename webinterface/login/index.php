@@ -62,24 +62,62 @@ if($_SESSION['eingang']==0){
     <center>
       <h1>Webinterface von ClanWAF</h1>
       <br><br>
-      <div class="middle">
-    <div class="counting-sec">
-      <div class="inner-width">
-        <div class="col">
-          <img src="../img/map.png" width="550" height="250"  alt="Maps hochgeladen" />
-          <?php
-          $db_res = mysqli_query($link,"SELECT `count` FROM `SchemeticCount` ") or die("<center><h2>0 <br> Server </h2>");
-          $row = mysqli_fetch_array($db_res);
-          $pwresold = intval($row["count"]);
-          echo '<h2 class="num">'.$pwresold.'</h2>';
+        <br>
+        <div class="hover-table-layout">
+            <div class="listing-item">
+                <figure class="image">
+                    <img src="../img/map.png" alt="Maps hochgeladen" height="220px" />
+                    <figcaption>
+                        <div class="caption">
+                            <h1>Schemetic Hochladen</h1>
+                        </div>
+                    </figcaption>
+                </figure>
+                <div class="listing">
+                    <h3>Soviele wurden schon Hochgeladen!</h3>
+                    <?php
+                    //$db_res = mysqli_query($link,"SELECT `count` FROM `SchemeticCount` ") or die("<center><h2>0 <br> Server </h2>");
+                    //$row = mysqli_fetch_array($db_res);
+                    //$pwresold = intval($row["count"]);
+                    $pwresold=0;
+                    echo '<h3 class="num">'.$pwresold.'</h3>';
 
-          ?>
-          <h2>Schemetics hochgeladen</h2>
+                    ?>
+                   <button class="logbtn" onclick="Register()">Jetzt Hochladen</button>
+                </div>
+            </div>
+            <div class="listing-item">
+                <figure class="image">
+                    <img src="../img/cloud.jpg" alt="Cloud" height="220px" />
+                    <figcaption>
+                        <div class="caption">
+                            <h1>Cloud</h1>
+                        </div>
+                    </figcaption>
+                </figure>
+                <div class="listing">
+                    <h3>Unsere NextCloud</h3>
+                    <h3 >Komm auf unsere Cloud</h3>
+                    <a href=""><button class="logbtn">Jetzt Draufgehen</button></a>
+                </div>
+            </div>
+            <div class="listing-item">
+                <figure class="image">
+                    <img src="../img/trello.jpg" alt="Trello" height="220px" />
+                    <figcaption>
+                        <div class="caption">
+                            <h1>Trello</h1>
+                        </div>
+                    </figcaption>
+                </figure>
+                <div class="listing">
+                    <h3>Unsere Trello Liste</h3>
+                    <h3 >Komm auf unsere Trello liste</h3>
+                    <a href="https://trello.com/invite/b/4fTPG1Sm/33f94f0314c35bbe0f0840e2cd70507b/waf-bord"><button class="logbtn">Jetzt Draufgehen</button></a>
+                </div>
+            </div>
         </div>
-      </div>
-        <a class="logbtn" onclick="Register()">Schemetic hochladen</a>
-    </div>
-  </div>
+
 
         <script language="JavaScript">
 

@@ -4,7 +4,7 @@ require('../../dbconfig.php');
 
 if(isset($_POST['logi']))
 {
-  /*  if(isempty($_POST['myfile']))
+    if(isempty($_POST['datei']))
     {
 
         ?> <script "text/javascript">
@@ -12,7 +12,7 @@ if(isset($_POST['logi']))
 
         </script> <?php
 
-    }else{*/
+    }else{
         $upload_folder = 'upload/';
         $filename = pathinfo($_FILES['datei']['name'], PATHINFO_FILENAME);
         $extension = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));

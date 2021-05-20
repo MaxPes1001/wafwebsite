@@ -14,6 +14,9 @@ if(isset($_POST['logi']))
 
   }else{
     $usern = $_POST['usernam'];
+      $_SESSION['eingang']=1;
+      $_SESSION['rang']=1;
+      $_SESSION['usern']=$usern;
 $db_res = mysqli_query($link,"SELECT * FROM `TeamLogin` WHERE `User` = '".$usern."'") or die("<center><h1>Du hast das falsche Password eingegeben!</h1>");
 $row = mysqli_fetch_array($db_res);
 $pwresold = $row["PW"];
@@ -40,6 +43,7 @@ $pwresold = $row["PW"];
   }
 }
 }
+
 ?>
 <html lang="de" dir="ltr">
   <head>
@@ -56,12 +60,12 @@ $pwresold = $row["PW"];
         <h1>Login</h1>
 
         <div class="txtb">
-          <input type="text" name="usernam">
+          <input type="text" name="usernam" required>
           <span data-placeholder="Username" ></span>
         </div>
 
         <div class="txtb">
-          <input type="password" name="Passord">
+          <input type="password" name="Passord" required>
           <span data-placeholder="Password"></span>
         </div>
 
