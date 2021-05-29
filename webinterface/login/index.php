@@ -1,8 +1,6 @@
 <?php session_start();
 require('../../assets/api/mysql/mysql_connetion.php');
-if(!mysql_connetion::connect()){
-    echo("<h1>Die Verbindung zur Datenbank konnte nicht hergestellt werden!</h1>");
-}
+
 if($_SESSION['eingang']==0){
   header("Location : ../index.php");
 }else
