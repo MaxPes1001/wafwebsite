@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../../dbconfig.php');
+require('../../../assets/api/mysql/mysql_connetion.php');
 
 if(isset($_POST['logi']))
 {
@@ -24,9 +24,9 @@ if(isset($_POST['logi']))
         ?>    <script "text/javascript"> alert("Ungültige Dateiendung. Nur schematic, litematic, nbt und schem-Dateien sind erlaubt");</script><?php
         }else{
             if($_POST['server16']){
-                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-2/plugins/FastAsyncWorldEdit/schematics/";
+                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-1/plugins/FastAsyncWorldEdit/schematics/";
             }else{
-                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-1/plugins/WorldEdit/schematics/";
+                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-2/plugins/WorldEdit/schematics/";
             }
             $new_path = $upload_folder.$filename.'.'.$extension;
  
@@ -42,10 +42,10 @@ if(isset($_POST['logi']))
      
             move_uploaded_file($_FILES['datei']['tmp_name'], $new_path);
 
-       $db_res = mysqli_query($link,"SELECT * FROM `SchemeticCount`");
+       $db_res = mysql_connetion::result("SELECT * FROM `SchemeticCount`");
         $row = mysqli_fetch_array($db_res);
         $anzahl = intval($row["count"])+1;
-        mysqli_query($link,"UPDATE `SchemeticCount` SET `count`='".$anzahl."' ");
+            mysql_connetion::query("UPDATE `SchemeticCount` SET `count`='".$anzahl."' ");
    
         ?> <script "text/javascript"> alert("Du hast die Datei hochgeladen!");</script> <?php
     }
@@ -72,17 +72,17 @@ if(isset($_POST['logi']))
 <form action="schemetic.php" method="POST" class="login-form" enctype="multipart/form-data">
     <h1>Hochladen</h1>
 
-    <label class="switch" name="1.12 Server">
-        <input type="checkbox" checked="checked" name="server12">
-        <span class="slider round"></span>
-    </label>
-    <h3>1.12 Server</h3>
-<br>
     <label class="switch" name="1.16 Server">
-        <input type="checkbox" name="server16">
+        <input type="checkbox" checked="checked" name="server16">
         <span class="slider round"></span>
     </label>
     <h3>1.16 Server</h3>
+<br>
+    <label class="switch" name="1.12 Server">
+        <input type="checkbox" name="server12">
+        <span class="slider round"></span>
+    </label>
+    <h3>1.12 Server</h3>
     <br>
     <br>
     <input type="file" accept=".schematic,.litematic,.nbt,.schem" name ="datei" value="Schemetic">

@@ -1,6 +1,5 @@
 <?php session_start();
-require('../dbconfig.php');
-
+require('../../assets/api/mysql/mysql_connetion.php');
 if($_SESSION['eingang']==0){
   header("Location : ../index.php");
 }else
@@ -76,10 +75,9 @@ if($_SESSION['eingang']==0){
                 <div class="listing">
                     <h3>Soviele wurden schon Hochgeladen!</h3>
                     <?php
-                    //$db_res = mysqli_query($link,"SELECT `count` FROM `SchemeticCount` ") or die("<center><h2>0 <br> Server </h2>");
-                    //$row = mysqli_fetch_array($db_res);
-                    //$pwresold = intval($row["count"]);
-                    $pwresold=0;
+                    $db_res = mysql_connetion::result("SELECT `count` FROM `SchemeticCount` ") or die("<center><h2>0 <br> Server </h2>");
+                    $row = mysqli_fetch_array($db_res);
+                    $pwresold = intval($row["count"]);
                     echo '<h3 class="num">'.$pwresold.'</h3>';
 
                     ?>

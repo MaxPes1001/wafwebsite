@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('dbconfig.php');
+require('../assets/api/mysql/mysql_connetion.php');
 
 if(isset($_POST['logi']))
 {
@@ -17,7 +17,7 @@ if(isset($_POST['logi']))
       $_SESSION['eingang']=1;
       $_SESSION['rang']=1;
       $_SESSION['usern']=$usern;
-$db_res = mysqli_query($link,"SELECT * FROM `TeamLogin` WHERE `User` = '".$usern."'") or die("<center><h1>Du hast das falsche Password eingegeben!</h1>");
+$db_res = mysql_connetion::result("SELECT * FROM `TeamLogin` WHERE `User` = '".$usern."'");
 $row = mysqli_fetch_array($db_res);
 $pwresold = $row["PW"];
 
