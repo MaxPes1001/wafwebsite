@@ -4,7 +4,7 @@ require('../../../assets/api/mysql/mysql_connetion.php');
 
 if(isset($_POST['logi']))
 {
-    if(isempty($_POST['datei']))
+    if(!isset($_POST['datei']))
     {
 
         ?> <script "text/javascript">
@@ -23,10 +23,10 @@ if(isset($_POST['logi']))
         if(!in_array($extension, $allowed_extensions)) {
         ?>    <script "text/javascript"> alert("Ungültige Dateiendung. Nur schematic, litematic, nbt und schem-Dateien sind erlaubt");</script><?php
         }else{
-            if($_POST['server16']){
-                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-1/plugins/FastAsyncWorldEdit/schematics/";
+            if($_POST['server16']){    $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-2/plugins/WorldEdit/schematics/";
+
             }else{
-                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-2/plugins/WorldEdit/schematics/";
+                $upload_folder= "/home/minecraft/waf/CloudNet-Wrapper/local/servers/unity/unity-1/plugins/FastAsyncWorldEdit/schematics/";
             }
             $new_path = $upload_folder.$filename.'.'.$extension;
  
@@ -54,11 +54,11 @@ if(isset($_POST['logi']))
 
 
    // }
-        
 
 }
+}
 ?>
-<html lang="de" dir="ltr">
+<html lang="de">
 <head>
     <meta charset="utf-8">
     <title>ClanWAF.de Teammangagment</title>
